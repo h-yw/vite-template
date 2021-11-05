@@ -21,7 +21,7 @@ npm run build
 ```
 
 ## 说明
-* server: 可在vite.config.js中配置
-   <kbd>host</kbd> : 127.0.0.1
-   <kbd>post</kbd> : 9527
+* server: 可在vite.config.js中配置           
+   <kbd>host</kbd> : 127.0.0.1               
+   <kbd>post</kbd> : 9527           
 * .env相关：在config文件夹中配置
