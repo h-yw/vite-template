@@ -6,7 +6,10 @@
 import axios from 'axios';
 const service = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL,
-    timeout: 5000
+    timeout: 5000,
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
 })
 
 // 请求拦截器
