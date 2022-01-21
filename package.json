@@ -33,5 +33,11 @@
     "typescript": "^4.4.3",
     "vite": "^2.6.4",
     "vue-tsc": "^0.3.0"
-  }
+  },
+  "browserslist": [
+    "Chrome > 31",
+    "not ie <= 11",
+    "> 1%",
+    "last 2 versions"
+  ]
 }

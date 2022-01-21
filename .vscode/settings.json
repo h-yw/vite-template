@@ -3,5 +3,6 @@
         "esbuild",
         "mockjs",
         "vite"
-    ]
+    ],
+    "editor.linkedEditing": true
 }

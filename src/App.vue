@@ -9,7 +9,6 @@
     <router-link to="/">Index</router-link>
     <router-link to="/about">About</router-link>
   </div>
-  <img alt="Vue logo" src="./assets/logo.png" />
   <router-view />
 </template>
 
@@ -18,15 +17,17 @@ html,
 body {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 #app {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.nav{
+  width: 100%;
+  height: 64px;
 }
 </style>
