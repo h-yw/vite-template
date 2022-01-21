@@ -13,7 +13,9 @@
   },
   "dependencies": {
     "axios": "^0.23.0",
+    "clipboard": "^2.0.8",
     "postcss-pxtorem": "^6.0.0",
+    "vconsole": "^3.11.2",
     "vue": "^3.2.16",
     "vue-router": "^4.0.12"
   },
