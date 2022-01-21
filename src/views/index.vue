@@ -33,8 +33,6 @@ onMounted(() => {
     <br />
     <button @click="addDY">ADD DY</button>
   </div>
-  <div class="box"></div>
-  <div :style="{width:'750px',height:'30px',boxSizing:'border-box',border:'1px solid #000'}"></div>
 </template>
 <style lang="scss" scoped>
 .box {
