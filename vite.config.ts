@@ -45,16 +45,16 @@ export default defineConfig({
     strictPort: false,
     https: false,
     open: process.env.BROWSER !== "none",
-    /* 
-    https://vitejs.dev/config/#server-proxy
+    
+    // https://vitejs.dev/config/#server-proxy
     proxy:{
-       '/api': {
+       '/dev-api': {
         target: 'http://example.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        rewrite: (path) => path.replace(/^\/dev-api/, '')
       },
     },
-    */
+   
     origin: "http://127.0.0.1:9527",
   }
 });

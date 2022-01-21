@@ -1,7 +1,6 @@
 <script setup lang="ts">
 
-import { onMounted } from '@vue/runtime-core'
-import { ref } from 'vue'
+import { onMounted, ref,} from 'vue'
 // 变量声明
 const env = import.meta.env.VITE_ENV_FILE
 let dy = ref(0)
@@ -15,7 +14,8 @@ function addDY() {
 }
 
 onMounted(() => {
-  dy.value = 10
+// console.log(Toast);
+
 })
 </script>
 <template>

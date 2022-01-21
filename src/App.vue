@@ -11,7 +11,6 @@
   </div>
   <router-view />
 </template>
-
 <style>
 html,
 body {
@@ -26,8 +25,8 @@ body {
   text-align: center;
   color: #2c3e50;
 }
-.nav{
-  width: 100%;
-  height: 64px;
+.logo{
+  width: 200px;
+  height: 200px;
 }
 </style>
