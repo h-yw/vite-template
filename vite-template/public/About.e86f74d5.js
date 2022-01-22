@@ -1,0 +1,2 @@
+import{o as e,c as o,a as t}from"./vendor.62edb6d8.js";import{_ as r}from"./main.36a4f64e.js";const s={},a=t("b",null,"About",-1),c=[a];function n(_,d){return e(),o("div",null,c)}var l=r(s,[["render",n]]);export{l as default};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQWJvdXQuZTg2Zjc0ZDUuanMiLCJzb3VyY2VzIjpbXSwic291cmNlc0NvbnRlbnQiOltdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIn0=
