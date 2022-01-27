@@ -19,3 +19,4 @@ export const isWeixin = navigator.userAgent.toLowerCase().indexOf('micromessenge
 export const isWeibo = navigator.userAgent.toLowerCase().indexOf('weibo') > -1;
 export const isMobileClient = isAndroid || isiOS;
 export const isAPP = navigator.userAgent.indexOf('App/Internal') > -1;
+

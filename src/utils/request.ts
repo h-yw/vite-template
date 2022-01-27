@@ -4,6 +4,7 @@
  * @description 封装request请求
  */
 import axios from 'axios';
+import { App } from 'vue';
 const service = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL,
     timeout: 5000,
@@ -33,4 +34,12 @@ service.interceptors.response.use(response => {
     return Promise.reject(error)
 })
 
-export default service
+
+export {service}
+
+// 获取实例似乎不太优雅
+/* export default {
+    install:(app:App,options:any)=>{
+        app.config.globalProperties.$http = service
+    }
+} */

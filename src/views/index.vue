@@ -1,21 +1,25 @@
 <script setup lang="ts">
-
-import { onMounted, ref,} from 'vue'
+import { onMounted, ref, } from 'vue'
+import {Toast} from '@/components/toast/toast'
 // 变量声明
 const env = import.meta.env.VITE_ENV_FILE
 let dy = ref(0)
 
 // 函数声明
 function handleAlert(data: string) {
-  alert(data)
+  Toast({
+    type: 'info',
+    message:'轻轻的我走了\n正如我轻轻的来',
+    duration:3000,
+    position: 'middle',
+    // icon:'spinner'
+  })
 }
 function addDY() {
   dy.value++
 }
 
 onMounted(() => {
-// console.log(Toast);
-
 
 })
 </script>

@@ -1,14 +1,13 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 // import eslint from '@rollup/plugin-eslint';
+import viteSvgIcons from 'vite-plugin-svg-icons';
 
 import { qrcode } from 'vite-plugin-qrcode';
 
 import path from "path";
 import packageJson from './package.json'
 // https://vitejs.dev/config/
-console.log(process.env.BROWSER);
-
 export default defineConfig({
   root: process.cwd(),
   base: './',
@@ -31,7 +30,11 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    qrcode()
+    qrcode(),
+    viteSvgIcons({
+      iconDirs:[path.resolve(__dirname, "src/assets/icons")],
+      symbolId:'icon-[name]'
+    })
     // eslint({
     //   fix:true
     // })
