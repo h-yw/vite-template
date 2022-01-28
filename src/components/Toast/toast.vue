@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, computed } from 'vue';
-import Icon from '../Icon/icon.vue';
+import Icon from '../Icon/Icon.vue';
 // type ToastType = 'success' | 'error' | 'warning' | 'info';
 const props = defineProps({
     type: {
         type: String,
         default: 'info',
-        validator: (val: string) => ['success', 'error', 'warning', 'info','loading'].includes(val),
+        validator: (val: string) => ['success', 'error', 'warning', 'info', 'loading'].includes(val),
     },
     title: {
         type: String,
@@ -40,6 +40,7 @@ const props = defineProps({
         default: () => { },
     },
 })
+
 const show = ref(false)
 const timer = ref(0)
 const toastTime = () => {
@@ -47,11 +48,10 @@ const toastTime = () => {
     if (props.duration > 0) {
         timer.value = window.setTimeout(() => {
             show.value = false
-            props.close()
         }, props.duration)
     }
 }
-const typeIcon = computed(()=>{
+const typeIcon = computed(() => {
     switch (props.type) {
         case 'success':
             return 'success'
@@ -67,26 +67,33 @@ const typeIcon = computed(()=>{
             return ''
     }
 })
+const onClose = ()=>{
+    show.value = false
+    window.clearTimeout(timer.value)
+}
 onMounted(() => {
     toastTime()
-    console.log(props);  
+    // console.log(props);  
 })
 onUnmounted(() => {
     timer.value && clearTimeout(timer.value)
+})
+defineExpose({
+    onClose
 })
 </script>
 
 <template>
     <teleport :to="to">
         <Transition>
-            <div v-if="show" class="Toast" :class="['position-' + props.position]">
+            <div v-if="show" class="Toast" :class="['position-' + props.position]" @click="onClose">
                 <div v-if="title" class="Toast-title">
-                    <span>{{ title||props.type }}</span>
+                    <span>{{ title || props.type }}</span>
                 </div>
                 <div>
-                    <Icon :name="props.icon||typeIcon"/>
+                    <Icon :name="props.icon || typeIcon" />
                 </div>
-                <div v-if="props.message" class="Toast-content">{{message}}</div>
+                <div v-if="props.message" class="Toast-content">{{ message }}</div>
             </div>
         </Transition>
     </teleport>
@@ -95,7 +102,7 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 .Toast {
     position: fixed;
-    max-width:128px;
+    // width:128px;
     padding: 10px;
     border-radius: 8px;
     background-color: rgba(0, 0, 0, 0.7);
@@ -119,7 +126,6 @@ onUnmounted(() => {
     .Toast-content {
         padding: 10px;
         font-size: 14px;
-        line-height: 20px;
         white-space: pre-wrap;
         text-align: center;
         word-break: break-all;

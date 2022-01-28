@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref, } from 'vue'
-import {Toast} from '@/components/toast/toast'
+import {Toast} from '@/components/Toast/Toast'
 // 变量声明
 const env = import.meta.env.VITE_ENV_FILE
 let dy = ref(0)
@@ -10,10 +10,15 @@ function handleAlert(data: string) {
   Toast({
     type: 'info',
     message:'轻轻的我走了\n正如我轻轻的来',
-    duration:3000,
+    duration:0,
     position: 'middle',
-    // icon:'spinner'
+    icon:'success'
   })
+}
+const closeAlert = () => {
+  // Toast.close()
+  console.log(Toast);
+  
 }
 function addDY() {
   dy.value++
@@ -35,6 +40,7 @@ onMounted(() => {
       <b>{{ dy }}</b>
     </p>
     <button @click="handleAlert('button')">Alert</button>
+    <button @click="closeAlert">关闭</button>
     <br />
     <button @click="addDY">ADD DY</button>
   </div>

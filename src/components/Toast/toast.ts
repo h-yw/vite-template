@@ -1,5 +1,5 @@
 import { App, createApp } from "vue";
-import toast from "./toast.vue";
+import toast from "./Toast.vue";
 type ToastType = 'success' | 'error' | 'warning' | 'info' | 'loading';
 type PositionType = 'top' | 'middle' | 'bottom';
 interface Option {
@@ -15,17 +15,21 @@ interface Option {
 export class ToastInstance {
     private static instance: ToastInstance;
     private app: App;
+    private _options: Option;
     constructor(options: Option) {
-        const { type, message, duration, to, position, icon } = options;
+        this._options = options;
+        const { type, message, duration, to, position, icon} = options;
         this.app = createApp(toast, {
             type,
             message,
             duration,
             to,
             position,
-            icon
+            icon,
         });
         this.app.mount(document.createElement('div'));
+        console.log(this.app.ref);
+        
     }
     static getInstance(options: Option) {
         if (!ToastInstance.instance) {
@@ -33,8 +37,15 @@ export class ToastInstance {
         }
         return ToastInstance.instance;
     }
-    static install(app: App) {
+    static install(app: App,options:any) {
+        console.log('install',options);
+        
         app.component('HToast', toast);
+    }
+    close() {
+        // this.app.ref.show();
+
+        this.app.onClose()
     }
 }
 

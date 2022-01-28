@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from '@/router'
 import '@/utils/rem'
 // import { request } from './utils'
-// import Toast from '@/components/Toast/toast'
+import {ToastInstance} from '@/components/Toast/Toast'
 import 'virtual:svg-icons-register'
 
 // 打包时需要注释掉
@@ -12,6 +12,6 @@ if (import.meta.env.MODE === 'dev') {
     new Vconsole()
 }
 const app = createApp(App)
-app.use(router).mount('#app')
+app.use(router).use(ToastInstance,{test:'test'}).mount('#app')
 
 

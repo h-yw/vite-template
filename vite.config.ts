@@ -76,9 +76,9 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/dev-api/, '')
       },
     },
-    fs: {
-      deny: ['.env', '.env.*', '*.{pem,crt}']
-    },
+    // fs: {
+    //   deny: ['.env', '.env.*', '*.{pem,crt}']
+    // },
     origin: "http://127.0.0.1:9527",
   },
   preview:{
