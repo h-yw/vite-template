@@ -28,7 +28,7 @@ export class ToastInstance {
             icon,
         });
         this.app.mount(document.createElement('div'));
-        console.log(this.app.ref);
+        console.log(this.app);
         
     }
     static getInstance(options: Option) {
